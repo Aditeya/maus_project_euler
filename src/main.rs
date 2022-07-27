@@ -1,3 +1,6 @@
+mod solutions;
+
 fn main() {
-    println!("Hello, world!");
+    let ans = solutions::p1::s_v1(&999);
+    println!("ans: {}",ans);
 }
