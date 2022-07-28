@@ -17,11 +17,14 @@ fn main() {
         _ => help()
     }
 
-    let mut ans = 0;
+    let mut ans: u64 = 0;
     let mut is_answered = true;
     match problem_number {
-        1 => ans = solutions::p1::s_v1(&1000),
-        2 => ans = solutions::p2::s_v1(&4_000_000),
+        1 => ans = solutions::p1::s_v1(&1000) as u64,
+        2 => ans = solutions::p2::s_v1(&4_000_000) as u64,
+        3 => ans = solutions::p3::s_v1(&600851475143),
+        4 => ans = solutions::p4::s_v1() as u64,
+        35 => ans = solutions::p35::s_v1(&1_000_000) as u64,
         _ => {
             is_answered = false;
             println!("Problem Not Solved Yet :(");
