@@ -1,4 +1,5 @@
 use std::collections::HashSet;
+use maus_project_euler::is_prime;
 
 pub fn s_v1(prime_limit: &u32) -> u32 {
     let prime_arr = prime_sieve(&prime_limit);
@@ -42,15 +43,3 @@ fn prime_sieve(n: &u32) -> HashSet<u32> {
     primes
 }
 
-fn is_prime(n: &u32) -> bool {
-    if *n <= 1 {
-        return false
-    }
-
-    for i in 2..=((*n as f64).sqrt() as u32) {
-        if n % i == 0 {
-            return false
-        }
-    }
-    true
-}
