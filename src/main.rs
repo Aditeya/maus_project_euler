@@ -28,6 +28,8 @@ fn main() {
         6 => ans = solutions::p6::s_v1(&10) as u64,
         7 => ans = solutions::p7::s_v1(&10_001) as u64,
         8 => ans = solutions::p8::s_v1(&13) as u64,
+        9 => ans = solutions::p9::s_v1(&1000) as u64,
+        10 => ans = solutions::p10::s_v1(&2_000_000) as u64,
         35 => ans = solutions::p35::s_v1(&1_000_000) as u64,
         _ => {
             is_answered = false;

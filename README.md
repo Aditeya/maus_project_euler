@@ -15,4 +15,6 @@ Run with release mode `cargo run -qr <problem_number>`
 - [x] problem 6
 - [x] problem 7
 - [x] problem 8
+- [x] problem 9
+- [x] problem 10
 - [x] problem 35
