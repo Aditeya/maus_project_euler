@@ -16,13 +16,14 @@ pub fn is_prime(n: &u32) -> bool {
     true
 }
 
-// TODO: find optimisations for prime_sieve
-pub fn prime_sieve(n: &u32) -> HashSet<u32> {
-    let mut primes: HashSet<u32> = HashSet::from_iter(2..=*n);
+pub fn prime_sieve(limit: &u32) -> HashSet<u32> {
+    let root_limit = (*limit as f64).sqrt() as usize;
+    let mut primes: HashSet<u32> = HashSet::from_iter((3..=*limit).step_by(2));
+    primes.insert(2);
 
-    for i in 2..=((*n as f64).sqrt() as usize) {
-        if primes.contains(&(i as u32)) && is_prime(&(i as u32)) {
-            for j in ((i+i)..=(*n as usize)).step_by(i as usize) {
+    for i in (3..=root_limit).step_by(2) {
+        if primes.contains(&(i as u32)) {
+            for j in ((i*i)..=(*limit as usize)).step_by(2*i as usize) {
                 primes.remove(&(j as u32));
             }
         }
