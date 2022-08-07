@@ -1,3 +1,5 @@
+use colored::Colorize;
+
 const NUM_GRID: [[u8; 20]; 20] = [
 [08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08],
 [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00],
@@ -22,13 +24,22 @@ const NUM_GRID: [[u8; 20]; 20] = [
 ];
 
 pub fn s_v1() -> u32 {
+    let mut num_grid_coords: [(usize, usize);4] = [(0,0);4];
     let mut max_product = 0;
 
     // Check Left & Right
     for i in 0..NUM_GRID.len() {
         for j in 0..(NUM_GRID[i].len()-3) {
             let product: u32 = (NUM_GRID[i][j] as u32) * (NUM_GRID[i][j+1] as u32) * (NUM_GRID[i][j+2] as u32) * (NUM_GRID[i][j+3] as u32);
-            if product > max_product { max_product = product; }
+            if product > max_product {
+                max_product = product;
+                num_grid_coords = [
+                    ( i, j  ),
+                    ( i, j+1),
+                    ( i, j+2),
+                    ( i, j+3),
+                ]
+            }
         }
     }
 
@@ -36,7 +47,15 @@ pub fn s_v1() -> u32 {
     for i in 0..(NUM_GRID.len()-3) {
         for j in 0..NUM_GRID[i].len() {
             let product: u32 = (NUM_GRID[i][j] as u32) * (NUM_GRID[i+1][j] as u32) * (NUM_GRID[i+2][j] as u32) * (NUM_GRID[i+3][j] as u32);
-            if product > max_product { max_product = product; }
+            if product > max_product {
+                max_product = product;
+                num_grid_coords = [
+                    ( i  , j),
+                    ( i+1, j),
+                    ( i+2, j),
+                    ( i+3, j),
+                ]
+            }
         }
     }
 
@@ -44,7 +63,15 @@ pub fn s_v1() -> u32 {
     for i in 0..(NUM_GRID.len()-3) {
         for j in 0..(NUM_GRID[i].len()-3) {
             let product: u32 = (NUM_GRID[i][j] as u32) * (NUM_GRID[i+1][j+1] as u32) * (NUM_GRID[i+2][j+2] as u32) * (NUM_GRID[i+3][j+3] as u32);
-            if product > max_product { max_product = product; }
+            if product > max_product {
+                max_product = product;
+                num_grid_coords = [
+                    ( i  , j  ),
+                    ( i+1, j+1),
+                    ( i+2, j+2),
+                    ( i+3, j+3),
+                ]
+            }
         }
     }
 
@@ -52,9 +79,39 @@ pub fn s_v1() -> u32 {
     for i in 0..(NUM_GRID.len()-3) {
         for j in 0..(NUM_GRID[i].len()-3) {
             let product: u32 = (NUM_GRID[i][j+3] as u32) * (NUM_GRID[i+1][j+2] as u32) * (NUM_GRID[i+2][j+1] as u32) * (NUM_GRID[i+3][j] as u32);
-            if product > max_product { max_product = product; }
+            if product > max_product {
+                max_product = product;
+                num_grid_coords = [
+                    ( i  , j+3),
+                    ( i+1, j+2),
+                    ( i+2, j+1),
+                    ( i+3, j  ),
+                ]
+            }
         }
     }
 
+    print_num_grid(&num_grid_coords);
+
     max_product
+}
+
+fn print_num_grid(num_grid_coords: &[(usize, usize);4]) {
+    for i in 0..NUM_GRID.len() {
+        for j in 0..NUM_GRID[i].len() {
+            let mut is_red = false;
+            for coords in num_grid_coords {
+                if (i,j) == *coords {
+                    print!("{:02} ", NUM_GRID[i][j].to_string().red());
+                    is_red = true;
+                    break;
+                }
+            }
+            if !is_red {
+                print!("{:02} ", NUM_GRID[i][j]);
+            }
+        }
+        println!();
+    }
+    println!();
 }
