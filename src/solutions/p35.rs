@@ -1,7 +1,7 @@
 use maus_project_euler::*;
 
 pub fn s_v1(prime_limit: &u32) -> u32 {
-    let prime_arr = prime_sieve(&prime_limit);
+    let prime_arr = prime_sieve_hashset(&prime_limit);
 
     let mut count = 0;
     for i in prime_arr.iter() {

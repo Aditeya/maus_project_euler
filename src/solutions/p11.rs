@@ -102,7 +102,7 @@ fn print_num_grid(num_grid_coords: &[(usize, usize);4]) {
             let mut is_red = false;
             for coords in num_grid_coords {
                 if (i,j) == *coords {
-                    print!("{:02} ", NUM_GRID[i][j].to_string().red());
+                    print!("{:02} ", NUM_GRID[i][j].to_string().red().bold());
                     is_red = true;
                     break;
                 }
