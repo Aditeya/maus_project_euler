@@ -34,6 +34,7 @@ fn main() {
         12 => ans = solutions::p12::s_v2(&500) as u64,
         13 => ans = solutions::p13::s_v1(&10) as u64,
         14 => ans = solutions::p14::s_v1(&1_000_000) as u64,
+        15 => ans = solutions::p15::s_v1(&20) as u64,
         35 => ans = solutions::p35::s_v1(&1_000_000) as u64,
         _ => {
             is_answered = false;
