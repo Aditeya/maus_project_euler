@@ -1,4 +1,4 @@
-pub fn s_v1() -> u32 {
+pub fn s_v1() -> u64 {
     let mut largest_palindrome = 0;
 
     let mut a = 999;
@@ -30,11 +30,11 @@ pub fn s_v1() -> u32 {
     largest_palindrome
 }
 
-fn is_palindrome(n: &u32) -> bool {
+fn is_palindrome(n: &u64) -> bool {
     *n == reverse_number(*n)
 }
 
-fn reverse_number(mut n: u32) -> u32 {
+fn reverse_number(mut n: u64) -> u64 {
     let mut reverse = 0;
     while n > 0 {
         reverse = 10*reverse + n % 10;

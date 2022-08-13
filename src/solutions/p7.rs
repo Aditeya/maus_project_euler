@@ -1,6 +1,6 @@
 use maus_project_euler::is_prime;
 
-pub fn s_v1(n: &u32) -> u32 {
+pub fn s_v1(n: &u64) -> u64 {
     let mut count = 0;
     let mut i = 2;
     loop {

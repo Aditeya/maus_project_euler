@@ -1,6 +1,6 @@
 use maus_project_euler::*;
 
-pub fn s_v1(prime_limit: &u32) -> u32 {
+pub fn s_v1(prime_limit: &u64) -> u64 {
     let prime_arr = prime_sieve_hashset(&prime_limit);
 
     let mut count = 0;
@@ -25,6 +25,6 @@ pub fn s_v1(prime_limit: &u32) -> u32 {
     count
 }
 
-fn rotate_number(n: &u32, digits: &u32) -> u32 {
-    (n % 10) * (10 as u32).pow(digits - 1) + (n / 10)
+fn rotate_number(n: &u64, digits: &u32) -> u64 {
+    (n % 10) * 10u64.pow(digits - 1) + (n / 10)
 }

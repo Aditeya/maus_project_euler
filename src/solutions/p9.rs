@@ -1,8 +1,8 @@
-pub fn s_v1(s: &u32) -> u32 {
+pub fn s_v1(s: &u64) -> u64 {
     let s = s/2;
 
-    let mut m: u32 = 2;
-    let mut n: u32;
+    let mut m: u64 = 2;
+    let mut n: u64;
     'found: loop {
         n = 2;
         while n < m {

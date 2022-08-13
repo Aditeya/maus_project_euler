@@ -3,7 +3,7 @@ use maus_project_euler::sum_of_natural_numbers;
 use maus_project_euler::prime_sieve_vec;
 
 #[allow(dead_code)]
-pub fn s_v1(n: &u32) -> u32 {
+pub fn s_v1(n: &u64) -> u64 {
     let mut i = 1;
     loop {
         let triangle_num = sum_of_natural_numbers(&i);
@@ -14,11 +14,11 @@ pub fn s_v1(n: &u32) -> u32 {
     }
 }
 
-pub fn s_v2(limit: &u32) -> u32 {
-    let mut n   : u32 = 3;
-    let mut d_n : u32 = 2;
-    let mut cnt : u32 = 0;
-    let (mut n1, mut d_n1, mut exponent): (u32, u32, u32);
+pub fn s_v2(limit: &u64) -> u64 {
+    let mut n   : u64 = 3;
+    let mut d_n : u64 = 2;
+    let mut cnt : u64 = 0;
+    let (mut n1, mut d_n1, mut exponent): (u64, u64, u64);
     let primes = prime_sieve_vec(&65500);
 
     while cnt <= *limit {
@@ -51,7 +51,7 @@ pub fn s_v2(limit: &u32) -> u32 {
     n * (n-1) / 2
 }
 
-fn divisor_length(n: &u32) -> u32 {
+fn divisor_length(n: &u64) -> u64 {
     let prime_factors = prime_factors(*n);
 
     let mut count = 1;
@@ -62,8 +62,8 @@ fn divisor_length(n: &u32) -> u32 {
     count
 }
 
-fn prime_factors(mut n: u32) -> HashMap<u32, u32> {
-    let mut prime_factors: HashMap<u32, u32> = HashMap::new();
+fn prime_factors(mut n: u64) -> HashMap<u64, u64> {
+    let mut prime_factors: HashMap<u64, u64> = HashMap::new();
 
     let mut count = 0;
     while n % 2 == 0 {
@@ -72,7 +72,7 @@ fn prime_factors(mut n: u32) -> HashMap<u32, u32> {
     }
     prime_factors.insert(2, count);
 
-    for i in (3..((n as f64).sqrt() as u32) ).step_by(2) {
+    for i in (3..((n as f64).sqrt() as u64) ).step_by(2) {
         count = 0;
         while n % i == 0 {
             count += 1;

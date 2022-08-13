@@ -1,4 +1,4 @@
-pub fn s_v1(n: &u32) -> u32 {
+pub fn s_v1(n: &u64) -> u64 {
     let mut sum = 0;
     let mut a = 1;
     let mut b = 1;

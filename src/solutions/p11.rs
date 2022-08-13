@@ -23,7 +23,7 @@ const NUM_GRID: [[u8; 20]; 20] = [
 [01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48],
 ];
 
-pub fn s_v1() -> u32 {
+pub fn s_v1() -> u64 {
     let mut num_grid_coords: [(usize, usize);4] = [(0,0);4];
     let mut max_product = 0;
 
@@ -93,7 +93,7 @@ pub fn s_v1() -> u32 {
 
     print_num_grid(&num_grid_coords);
 
-    max_product
+    max_product as u64
 }
 
 fn print_num_grid(num_grid_coords: &[(usize, usize);4]) {
