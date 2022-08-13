@@ -18,34 +18,25 @@ To run a solution use: `cargo run -qr <problem_number>`
 ## Directory Structure
 
 ```
- .
-├──  Cargo.lock
-├──  Cargo.toml
-├──  README.md
-└──  src
-   ├──  lib.rs			// holds related functions used by solutions
-   ├──  main.rs		// runs solution based on choice
-   ├──  solutions
-   │  └──  pX.rs		// where X is a number related to problem number
-   └──  solutions.rs	// importing solutions
+.
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+└── src
+    ├── lib.rs			// holds related functions used by solutions
+    ├── main.rs			// runs solution based on choice
+    ├── solutions
+    │   └── pX.rs		// where X is a number related to problem number
+    └── solutions.rs	// importing solutions
 ```
 
 ## Solutions file
 
-Solutions are put in functions with a version number, eg. `s_v1()` or `s_v2()` etc.
+Solutions are put in functions with a version number, eg. `s_v1()`, `s_v2()`, `s_v3()` etc.
 Only the latest version number is executed as its supposed to be better.
 
 ## Problems Solved
-- [x] problem 1
-- [x] problem 2
-- [x] problem 3
-- [x] problem 4
-- [x] problem 5
-- [x] problem 6
-- [x] problem 7
-- [x] problem 8
-- [x] problem 9
-- [x] problem 10
+- [x] problem 1-10
 - [x] problem 11
 - [x] problem 12
 - [x] problem 13
