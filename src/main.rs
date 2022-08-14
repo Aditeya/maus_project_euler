@@ -34,7 +34,7 @@ fn main() {
 }
 
 fn help() {
-    eprintln!("Usage: maus_project_euler <problem_number>");
+    eprintln!("Usage: maus_project_euler <problem_number>\n       maus_project_euler --all");
     process::exit(1);
 }
 
