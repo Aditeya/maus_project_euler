@@ -36,7 +36,7 @@ Solutions are put in functions with a version number, eg. `s_v1()`, `s_v2()`, `s
 Only the latest version number is executed as its supposed to be better.
 
 ## Problems Solved
-- [x] problem 1-10
+- [x] problem 1 to 10
 - [x] problem 11
 - [x] problem 12
 - [x] problem 13
