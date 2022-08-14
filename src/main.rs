@@ -1,4 +1,5 @@
 use std::env;
+use std::time::Instant;
 use std::process;
 
 mod solutions;
@@ -19,6 +20,7 @@ fn main() {
 
     let mut ans: u64 = 0;
     let mut is_answered = true;
+    let now = Instant::now();
     match problem_number {
         1 => ans = solutions::p1::s_v1(&1000),
         2 => ans = solutions::p2::s_v1(&4_000_000),
@@ -41,9 +43,12 @@ fn main() {
             println!("Problem Not Solved Yet :(");
         }
     }
+    let time = now.elapsed().as_nanos();
 
     if is_answered {
-        println!("p{} ans: {}", problem_number, ans);
+        println!(" problem: {}", problem_number);
+        println!("solution: {}",  ans);
+        println!("    time: {} ns", time);
     }
 
 
