@@ -13,8 +13,17 @@ They're just the best possible solutions I could think off or the ones I like.
 
 ## Running
 
-To run a solution use: `cargo run -qr <problem_number>`
-To run all solutions use: `cargo run -qr -- --all`
+To run a solution use: 
+
+```
+$ cargo run -qr <problem_number>
+```
+
+To run all solutions use: 
+
+```
+$ cargo run -qr -- --all
+```
 
 ## Directory Structure
 
