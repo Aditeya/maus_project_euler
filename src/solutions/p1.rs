@@ -1,5 +1,7 @@
-pub fn s_v1(n: &u64) -> u64 {
-    let n = n - 1;
+const N: u64 = 1000;
+
+pub fn s_v1() -> u64 {
+    let n = N - 1;
     sum_divisible_by_n(&3, &n) + sum_divisible_by_n(&5, &n) - sum_divisible_by_n(&15, &n)
 }
 

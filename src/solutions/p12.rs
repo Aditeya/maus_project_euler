@@ -2,26 +2,29 @@ use std::collections::HashMap;
 use maus_project_euler::sum_of_natural_numbers;
 use maus_project_euler::prime_sieve_vec;
 
+const N: u64 = 500;
+
 #[allow(dead_code)]
-pub fn s_v1(n: &u64) -> u64 {
+pub fn s_v1() -> u64 {
     let mut i = 1;
     loop {
         let triangle_num = sum_of_natural_numbers(&i);
-        if divisor_length(&triangle_num) >= *n {
+        if divisor_length(&triangle_num) >= N {
             return triangle_num;
         }
         i += 1;
     }
 }
 
-pub fn s_v2(limit: &u64) -> u64 {
+pub fn s_v2() -> u64 {
+    let limit = N;
     let mut n   : u64 = 3;
     let mut d_n : u64 = 2;
     let mut cnt : u64 = 0;
     let (mut n1, mut d_n1, mut exponent): (u64, u64, u64);
     let primes = prime_sieve_vec(&65500);
 
-    while cnt <= *limit {
+    while cnt <= limit {
         n += 1;
         n1 = n;
         if n % 2 == 0 { n1 /= 2; }

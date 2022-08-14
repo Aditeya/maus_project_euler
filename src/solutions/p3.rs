@@ -1,8 +1,10 @@
-pub fn s_v1(n: &u64) -> u64 {
-    let mut num = n.clone();
+const N: u64 = 600851475143;
+
+pub fn s_v1() -> u64 {
+    let mut num = N.clone();
     let mut last_factor;
 
-    if n % 2 == 0 {
+    if N % 2 == 0 {
         last_factor = 2;
         num /= 2;
         while num % 2 == 0 {

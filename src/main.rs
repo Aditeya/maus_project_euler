@@ -18,40 +18,21 @@ fn main() {
         _ => help()
     }
 
-    let mut ans: u64 = 0;
-    let mut is_answered = true;
-    let now = Instant::now();
-    match problem_number {
-        1 => ans = solutions::p1::s_v1(&1000),
-        2 => ans = solutions::p2::s_v1(&4_000_000),
-        3 => ans = solutions::p3::s_v1(&600851475143),
-        4 => ans = solutions::p4::s_v1(),
-        5 => ans = solutions::p5::s_v1(),
-        6 => ans = solutions::p6::s_v1(&10),
-        7 => ans = solutions::p7::s_v1(&10_001),
-        8 => ans = solutions::p8::s_v1(&13),
-        9 => ans = solutions::p9::s_v1(&1000),
-        10 => ans = solutions::p10::s_v1(&2_000_000),
-        11 => ans = solutions::p11::s_v1(),
-        12 => ans = solutions::p12::s_v2(&500),
-        13 => ans = solutions::p13::s_v1(&10),
-        14 => ans = solutions::p14::s_v1(&1_000_000),
-        15 => ans = solutions::p15::s_v1(&20),
-        35 => ans = solutions::p35::s_v1(&1_000_000),
-        _ => {
-            is_answered = false;
+    match solutions::SOLUTION_FUNCTIONS_HASHMAP.get(&problem_number) {
+        Some(solution_function) => {
+            let now = Instant::now();
+            let solution = solution_function();
+            let time = now.elapsed().as_nanos();
+
+            println!(" problem: {}", problem_number);
+            println!("solution: {}", solution);
+            println!("    time: {} ns", time);
+        },
+        None =>  {
             println!("Problem Not Solved Yet :(");
+            process::exit(1);
         }
-    }
-    let time = now.elapsed().as_nanos();
-
-    if is_answered {
-        println!(" problem: {}", problem_number);
-        println!("solution: {}",  ans);
-        println!("    time: {} ns", time);
-    }
-
-
+    };
 }
 
 fn help() {

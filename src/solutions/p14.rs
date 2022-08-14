@@ -1,14 +1,16 @@
 use colored::Colorize;
 use std::collections::HashMap;
 
-pub fn s_v1(limit: &u64) -> u64 {
+const LIMIT: u64 = 1_000_000;
+
+pub fn s_v1() -> u64 {
     println!("{}", "This solution runs faster in release mode".red());
     let mut sequence_length: HashMap<u64,u32> = HashMap::new();
     sequence_length.insert(1, 1);
     let mut longest_n_chain = 1;
     let mut longest_n = 0;
 
-    for n in (*limit/2)..*limit {
+    for n in (LIMIT/2)..LIMIT {
         let mut length = 0;
 
         match sequence_length.get(&n) {

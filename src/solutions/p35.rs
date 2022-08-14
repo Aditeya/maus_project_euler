@@ -1,7 +1,9 @@
 use maus_project_euler::*;
 
-pub fn s_v1(prime_limit: &u64) -> u64 {
-    let prime_arr = prime_sieve_hashset(&prime_limit);
+const PRIME_LIMIT: u64 = 1_000_000;
+
+pub fn s_v1() -> u64 {
+    let prime_arr = prime_sieve_hashset(&PRIME_LIMIT);
 
     let mut count = 0;
     for i in prime_arr.iter() {

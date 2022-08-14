@@ -103,14 +103,16 @@ const NUMS: [&str; 100] = [
     "53503534226472524250874054075591789781264330331690",
 ];
 
-pub fn s_v1(length: &u32) -> u64 {
+const LENGTH: u64 = 10;
+
+pub fn s_v1() -> u64 {
     let mut sum = Integer::new();
     for num in NUMS.iter() {
         let parsed_num = num.parse::<Integer>().unwrap();
         sum = Integer::from(&sum + &parsed_num);
     }
 
-    let ans = &sum.to_string()[0..(*length as usize)];
+    let ans = &sum.to_string()[0..(LENGTH as usize)];
 
     ans.parse().unwrap()
 }
