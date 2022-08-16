@@ -9,16 +9,6 @@ use tabled::{
 
 mod solutions;
 
-#[derive(Tabled)]
-struct TableResult {
-    #[tabled(rename = "Problem Number")]
-    problem_number: u32,
-    #[tabled(rename = "Solution")]
-    solution: u64,
-    #[tabled(rename = "Time (ns)")]
-    time: u128,
-}
-
 fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -55,6 +45,16 @@ fn run_solution(problem_number: &u32) {
             process::exit(1);
         }
     };
+}
+
+#[derive(Tabled)]
+struct TableResult {
+    #[tabled(rename = "Problem Number")]
+    problem_number: u32,
+    #[tabled(rename = "Solution")]
+    solution: u64,
+    #[tabled(rename = "Time (ns)")]
+    time: u128,
 }
 
 fn run_all() {
