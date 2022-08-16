@@ -15,7 +15,7 @@ struct TableResult {
     problem_number: u32,
     #[tabled(rename = "Solution")]
     solution: u64,
-    #[tabled(rename = "time")]
+    #[tabled(rename = "Time (ns)")]
     time: u128,
 }
 
