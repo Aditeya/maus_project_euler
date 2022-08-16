@@ -18,6 +18,7 @@ pub mod p15;
 pub mod p16;
 pub mod p17;
 pub mod p18;
+pub mod p19;
 pub mod p35;
 
 pub const SOLUTION_FUNCTIONS_HASHMAP: phf::Map<u32, fn() -> u64> = phf_map! {
@@ -39,5 +40,6 @@ pub const SOLUTION_FUNCTIONS_HASHMAP: phf::Map<u32, fn() -> u64> = phf_map! {
     16u32 => p16::s_v1,
     17u32 => p17::s_v1,
     18u32 => p18::s_v1,
+    19u32 => p19::s_v1,
     35u32 => p35::s_v1,
 };
