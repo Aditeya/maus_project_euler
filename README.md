@@ -48,4 +48,5 @@ Only the latest version number is executed as its supposed to be better.
 ## Problems Solved
 - [x] problem 1 to 10
 - [x] problem 11 to 20
+- [x] problem 21
 - [x] problem 35
