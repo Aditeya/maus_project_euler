@@ -11,11 +11,6 @@ mod solutions;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let a= 1.2331f64;
-    let b= 1.2332f64;
-    if a != b {
-        println!("sucess");
-    }
 
     match args.len() {
         2 => match args[1].as_str() {
