@@ -6,7 +6,7 @@ pub fn s_v1() -> u64 {
     let mut sum: u64 = 0;
     for i in 1..=N {
         // println!("{} {}", i, encode(i))
-        sum += encode(i).replace(" ", "").len() as u64;
+        sum += encode(i).replace(' ', "").len() as u64;
     }
 
     sum

@@ -9,11 +9,11 @@ pub fn s_v1() -> u64 {
     let mut total: u64 = 0;
     for year in 1901..=2000 {
         months[1] = if is_leap_year(&year) { 29 } else { 28 };
-        for month in 0..12 {
+        for month in months {
             if (days - 1) % 7 == 0 {
                 total += 1;
             }
-            days += months[month] as u16;
+            days += month as u16;
         }
     }
 

@@ -49,8 +49,8 @@ fn collatz_iterate(n: &u64) -> u64 {
     if *n == 1 { return 1; }
 
     if n % 2 == 0 {
-        return n/2;
+        n/2
     } else {
-        return 3 * n + 1;
+        3 * n + 1
     }
 }

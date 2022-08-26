@@ -8,7 +8,7 @@ pub fn s_v1() -> u64 {
     let mut count = 0;
     for i in prime_arr.iter() {
         let len = (i.to_string().len()) as u32;
-        let mut rot_num = i.clone();
+        let mut rot_num = *i;
 
         let mut is_circular_prime = true;
         for _ in 1..len {

@@ -1,7 +1,7 @@
 const N: u64 = 600851475143;
 
 pub fn s_v1() -> u64 {
-    let mut num = N.clone();
+    let mut num = N;
     let mut last_factor;
 
     if N % 2 == 0 {

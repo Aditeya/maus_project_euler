@@ -4,10 +4,8 @@ pub fn s_v1() -> u64 {
     let mut sum = 0;
     for a in 2..=N {
         let b = sum_of_proper_divisors(&a);
-        if b > a {
-            if sum_of_proper_divisors(&b) == a {
-                sum += a + b;
-            }
+        if b > a && sum_of_proper_divisors(&b) == a {
+            sum += a + b;
         }
     }
 
