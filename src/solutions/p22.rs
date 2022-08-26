@@ -6,7 +6,7 @@ pub fn s_v1() -> u64 {
     let mut sum = 0;
     long_str.sort();
     for (i, word) in long_str.iter().enumerate() {
-        sum +=  word_sum(word) as u64 * i as u64;
+        sum +=  word_sum(word) as u64 * (1+i as u64);
     }
 
     sum
@@ -15,6 +15,6 @@ pub fn s_v1() -> u64 {
 fn word_sum(word: &str) -> u8 {
     word.chars()
         .map(|c| c as u8)
-        .map(|c| c - b'A')
+        .map(|c| c - b'A' + 1)
         .sum()
 }
