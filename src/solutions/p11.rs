@@ -28,9 +28,9 @@ pub fn s_v1() -> u64 {
     let mut max_product = 0;
 
     // Check Left & Right
-    for i in 0..NUM_GRID.len() {
-        for j in 0..(NUM_GRID[i].len()-3) {
-            let product: u32 = (NUM_GRID[i][j] as u32) * (NUM_GRID[i][j+1] as u32) * (NUM_GRID[i][j+2] as u32) * (NUM_GRID[i][j+3] as u32);
+    for (i, row) in NUM_GRID.iter().enumerate() {
+        for j in 0..(row.len()-3) {
+            let product: u32 = (row[j] as u32) * (row[j+1] as u32) * (row[j+2] as u32) * (row[j+3] as u32);
             if product > max_product {
                 max_product = product;
                 num_grid_coords = [
@@ -97,18 +97,18 @@ pub fn s_v1() -> u64 {
 }
 
 fn print_num_grid(num_grid_coords: &[(usize, usize);4]) {
-    for i in 0..NUM_GRID.len() {
-        for j in 0..NUM_GRID[i].len() {
+    for (i, row) in NUM_GRID.iter().enumerate() {
+        for (j, num) in row.iter().enumerate() {
             let mut is_red = false;
             for coords in num_grid_coords {
                 if (i,j) == *coords {
-                    print!("{:02} ", NUM_GRID[i][j].to_string().red().bold());
+                    print!("{:02} ", num.to_string().red().bold());
                     is_red = true;
                     break;
                 }
             }
             if !is_red {
-                print!("{:02} ", NUM_GRID[i][j]);
+                print!("{:02} ", num);
             }
         }
         println!();
