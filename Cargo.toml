@@ -10,3 +10,7 @@ colored = "2.0.0"
 phf = { version = "0.11", features = ["macros"] }
 rug = "1.17.0"
 tabled = "0.8.0"
+
+[profile.release]
+strip = true
+lto = true
